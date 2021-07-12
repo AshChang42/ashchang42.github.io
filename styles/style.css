@@ -1,0 +1,337 @@
+@charset "UTF-8";
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0px;
+  height: 100vh;
+  font-family: "Montserrat", "Noto Sans TC", sans-serif;
+}
+
+/* 選單 */
+nav ul li {
+  list-style-type: none;
+}
+
+nav ul li a {
+  color: #000000;
+  text-decoration: none;
+  line-height: 2em;
+  margin-left: 1em;
+  font-weight: 900;
+  font-size: 1.4em;
+}
+
+nav ul li a:hover {
+  color: #555;
+}
+
+.active {
+  color: #555;
+}
+
+/* 切版 */
+.all,
+.picbed,
+.info,
+.left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -ms-flex-line-pack: stretch;
+      align-content: stretch;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+}
+
+.all,
+.picbed,
+.left {
+  height: 100vh;
+}
+
+.all,
+.picbed,
+.info {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
+
+.info {
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.picbed {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-line-pack: start;
+      align-content: flex-start;
+}
+
+.left {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+header,
+.frontpage,
+.content {
+  position: relative;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.content {
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.frontpage,
+.content,
+.picbed,
+.info {
+  -ms-flex-preferred-size: 80vw;
+      flex-basis: 80vw;
+  background-color: #000000;
+}
+
+header {
+  -ms-flex-preferred-size: 20vw;
+      flex-basis: 20vw;
+  -webkit-box-flex: 4;
+      -ms-flex: 4 1 240px;
+          flex: 4 1 240px;
+}
+
+/* 首頁影片 */
+.frontpage video {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+/* 大標 */
+.logo {
+  height: 60vh;
+  background-color: #000000;
+  position: relative;
+}
+
+.title {
+  margin-left: 0.2em;
+  font-weight: 900;
+  font-size: 3.7em;
+  color: #ffffff;
+  line-height: 0.75em;
+  position: absolute;
+  bottom: -0.05em;
+}
+
+/* 選單列的email */
+.contact {
+  color: #000000;
+  line-height: 2em;
+  margin-left: 1.4em;
+  font-size: 1em;
+}
+
+/* 作品排版 */
+.picbed {
+  width: 80vw;
+  position: absolute;
+}
+
+.item {
+  width: 20vw;
+  height: 20vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
+  overflow: hidden;
+}
+
+.item img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin: 0px auto;
+  opacity: 0.5;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.item img:hover {
+  opacity: 1;
+  -webkit-transform: scale(1.06);
+          transform: scale(1.06);
+}
+
+.left,
+.right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  color: #ffffff;
+}
+
+.right {
+  width: 30vw;
+}
+
+.left {
+  width: 50vw;
+  margin: 0px auto;
+  margin-left: 5em;
+  padding-top: 20%;
+  font-weight: 400;
+  font-size: 0.85em;
+  line-height: 1.5em;
+}
+
+.left h1 {
+  line-height: 1em;
+}
+
+.left p {
+  margin: 1rem 0rem;
+}
+
+hr {
+  margin: 1rem 0rem;
+  display: none;
+}
+
+@media screen and (min-width: 840px) {
+  .info {
+    height: 100vh;
+  }
+}
+
+/* <1210px */
+@media screen and (max-width: 1210px) {
+  nav ul li a {
+    font-size: 1.2em;
+  }
+  /* 大標 */
+  .title {
+    font-size: 3.5em;
+  }
+  /* 選單列的email */
+  .contact {
+    font-size: 0.9em;
+  }
+}
+
+/* <1000px */
+@media screen and (max-width: 1000px) {
+  /* 大標 */
+  .title {
+    font-size: 3.4em;
+  }
+}
+
+/* <840px(平板) */
+@media screen and (max-width: 840px) {
+  /* 大標 */
+  .title {
+    font-size: 3em;
+  }
+  /* 右邊圖˙ */
+  .right {
+    width: 10vw;
+  }
+  /* 作品縮圖 */
+  .item {
+    width: 40vw;
+    height: 40vw;
+  }
+}
+
+/* <550px(手機) */
+@media screen and (max-width: 550px) {
+  .all,
+  nav {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  nav {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  /* 大標 */
+  .logo,
+  .logo img {
+    height: 20vh;
+  }
+  header {
+    max-height: 35%;
+  }
+  /* 並排改上下 */
+  .frontpage,
+  .content,
+  .info,
+  .picbed,
+  .left {
+    width: 100%;
+    min-height: 65%;
+  }
+  /* 作品縮圖 */
+  .item {
+    width: 50vw;
+    height: 50vw;
+  }
+  /* 自我介紹 */
+  .info {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .left {
+    height: -webkit-min-content;
+    height: -moz-min-content;
+    height: min-content;
+    margin-left: 3em;
+    padding-top: 2em;
+    overflow: hidden;
+  }
+  .right {
+    display: none;
+  }
+}
+/*# sourceMappingURL=style.css.map */
