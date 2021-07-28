@@ -8,122 +8,44 @@
 
 html,
 body {
+  font-size: 100%;
   margin: 0px;
   height: 100vh;
   font-family: "Montserrat", "Noto Sans TC", sans-serif;
 }
 
-/* 選單 */
-nav ul li {
-  list-style-type: none;
-}
-
-nav ul li a {
-  color: #000000;
-  text-decoration: none;
-  line-height: 2em;
-  margin-left: 1em;
-  font-weight: 900;
-  font-size: 1.8em;
-}
-
-nav ul li a:hover {
-  color: #a8a8a8;
-}
-
-.active {
-  color: #a8a8a8;
-}
-
-/* 切版 */
-.all,
-.picbed,
-.info,
-.left {
+.frontpage {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -ms-flex-line-pack: stretch;
-      align-content: stretch;
-  -webkit-box-align: stretch;
-      -ms-flex-align: stretch;
-          align-items: stretch;
-}
-
-.all,
-.picbed,
-.left {
-  height: 100vh;
-}
-
-.all,
-.picbed,
-.info {
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
-}
-
-.info {
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-}
-
-.picbed {
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -ms-flex-line-pack: start;
-      align-content: flex-start;
-}
-
-.left {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  color: #000;
 }
 
-header,
-.frontpage,
-.content {
-  position: relative;
-  min-width: 0;
-  min-height: 0;
-  overflow: hidden;
+.frontpage .titles,
+.frontpage h3,
+.frontpage button {
+  margin-left: 5vw;
 }
 
-.content {
-  overflow-x: hidden;
-  overflow-y: scroll;
+.frontpage .titles {
+  margin-top: 28vh;
+  width: 10vw;
+  color: #fff;
+  background-color: #ec5200;
+  border-radius: 0.5em;
 }
 
-.frontpage,
-.content,
-.picbed,
-.info {
-  -ms-flex-preferred-size: 80vw;
-      flex-basis: 80vw;
-  background-color: #000000;
+.frontpage .titles h1 {
+  font-size: 9em;
+  line-height: 0.8em;
 }
 
-header {
-  -ms-flex-preferred-size: 20vw;
-      flex-basis: 20vw;
-  -webkit-box-flex: 4;
-      -ms-flex: 4 1 240px;
-          flex: 4 1 240px;
-}
-
-/* 首頁影片 */
 .frontpage video {
+  z-index: -999;
   position: absolute;
   top: 0;
   width: 100%;
@@ -132,94 +54,206 @@ header {
      object-fit: cover;
 }
 
-/* 大標 */
-.logo {
-  height: 60vh;
-  background-color: #000000;
-  position: relative;
+.frontpage h3 {
+  margin-top: 1vh;
+  font-size: 1.4em;
+  letter-spacing: 0.1em;
+  font-weight: 400;
+  color: #fff;
 }
 
-.title {
-  margin-left: 0.2em;
-  font-weight: 900;
-  font-size: 3.7em;
-  color: #ffffff;
-  line-height: 0.75em;
-  position: absolute;
-  bottom: -0.05em;
+.frontpage button {
+  margin-top: 1vh;
+  background-color: #ec5200;
+  font-size: 1.3em;
+  letter-spacing: 0.1em;
+  color: #fff;
+  border: none;
+  border-radius: 0.5em;
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
 }
 
-/* 選單列的email */
-.contact {
-  color: #000000;
-  line-height: 2em;
-  margin-left: 1.4em;
-  font-size: 1em;
+.frontpage button:hover {
+  background-color: #fff;
+  color: #000;
 }
 
-/* 作品排版 */
-.picbed {
-  width: 80vw;
-  position: absolute;
+.frontpage button:active {
+  background-color: #fff;
+  color: #ec5200;
 }
 
-.item {
-  width: 20vw;
-  height: 20vw;
+header {
+  height: 8vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  text-align: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow: hidden;
+  background-color: #ffffff;
+}
+
+header nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 40vw;
+  list-style-type: none;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+header nav ul li a {
+  color: #000;
+  text-decoration: none;
+  line-height: 2em;
+  margin-left: 1em;
+  font-weight: 500;
+  font-size: 1.3em;
+}
+
+header nav ul li a:hover {
+  color: #a8a8a8;
+}
+
+header nav ul li a:active {
+  color: #fff;
+  background-color: #000;
+}
+
+header .logo a {
+  margin-left: 0.5em;
+  font-weight: 900;
+  font-size: 4em;
+  color: #000;
+  line-height: 0.75em;
+  text-decoration: none;
+}
+
+header .contact {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin-right: 1.5em;
+}
+
+header .contact img {
+  height: 3vh;
+  margin: 0 0.7em;
+}
+
+.picbed {
+  margin-top: 8vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  z-index: 1;
+  height: 100vh;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  overflow-x: hidden;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.picbed .item {
+  max-height: 15vw;
   overflow: hidden;
 }
 
-.item img {
+.picbed .item img {
+  max-height: 15vw;
   -o-object-fit: cover;
      object-fit: cover;
   margin: 0px auto;
-  opacity: 0.5;
+  opacity: 0.75;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
 }
 
-.item img:hover {
+.picbed .item img:hover {
   opacity: 1;
   -webkit-transform: scale(1.06);
           transform: scale(1.06);
 }
 
-.left,
-.right {
+.info,
+.left {
+  overflow: hidden;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: 100%;
-  color: #ffffff;
 }
 
-.right {
-  width: 30vw;
+.info {
+  background-color: #fff;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
 }
 
 .left {
-  width: 50vw;
-  margin: 0px auto;
-  margin-left: 5em;
-  padding-top: 20%;
+  margin-left: 7vw;
+  margin-top: 15vh;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   font-weight: 400;
-  font-size: 1.3em;
-  line-height: 1.5em;
+  color: #000;
 }
 
-.left h1 {
+.left img {
+  width: 20vw;
+}
+
+.left .about {
+  width: 35vw;
+  margin-left: 3em;
+}
+
+.left .about h1 {
+  font-size: 3em;
   line-height: 1em;
 }
 
-.left p {
+.left .about h3 {
+  font-size: 1.5rem;
+  line-height: 2em;
+}
+
+.left .about p {
+  font-size: 1.3rem;
   margin: 1rem 0rem;
 }
 
-hr {
+.left .about hr {
   margin: 1rem 0rem;
   display: none;
 }
