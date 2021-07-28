@@ -22,14 +22,14 @@ nav ul li a {
   line-height: 2em;
   margin-left: 1em;
   font-weight: 900;
-  font-size: 1.4em;
+  font-size: 1.8em;
 }
 nav ul li a:hover {
-  color: #555;
+  color: #a8a8a8;
 }
 
 .active {
-  color: #555;
+  color: #a8a8a8;
 }
 
 /* 切版 */
@@ -174,7 +174,7 @@ header {
   margin-left: 5em;
   padding-top: 20%;
   font-weight: 400;
-  font-size: 0.85em;
+  font-size: 1.3em;
   line-height: 1.5em;
 }
 
@@ -200,7 +200,7 @@ hr {
 /* <1210px */
 @media screen and (max-width: 1210px) {
   nav ul li a {
-    font-size: 1.2em;
+    font-size: 1.4em;
   }
 
   /* 大標 */
@@ -254,6 +254,10 @@ hr {
     flex-direction: row;
   }
 
+  nav ul li a {
+    font-size: 1.2em;
+  }
+
   /* 大標 */
   .logo,
   .logo img {
@@ -288,9 +292,10 @@ hr {
 
   .left {
     height: min-content;
-    margin-left: 3em;
+    margin-left: 1em;
     padding-top: 2em;
     overflow: hidden;
+    font-size: 1.1rem;
   }
 
   .right {
