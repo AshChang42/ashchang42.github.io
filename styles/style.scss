@@ -10,27 +10,46 @@ body {
   margin: 0px;
   height: 100vh;
   font-family: "Montserrat", "Noto Sans TC", sans-serif;
+  padding-bottom: 70px;
+}
+// about
+.aboutpage,
+.gallery {
+  min-height: 100%;
+  padding-bottom: 10vh;
+}
+// 作品內頁
+.abouttop {
+  button {
+    background-color: #fff;
+    font-size: 1em;
+    letter-spacing: 0.05em;
+    color: #aaa;
+    border-style: none;
+    border-radius: 0em;
+    padding: 0.5rem 1.3rem;
+    cursor: pointer;
+  }
+  button:hover {
+    color: #000;
+  }
 }
 
 // 首頁影片
 .frontpage {
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
   color: #000;
   .titles,
-  h3,
   button {
-    margin-left: 5vw;
+    margin-left: auto;
   }
   .titles {
-    margin-top: 28vh;
-    width: 10vw;
+    margin-top: 20vh;
     color: #fff;
-    background-color: #ec5200;
-    border-radius: 0.5em;
-    h1 {
-      font-size: 9em;
-      line-height: 0.8em;
+    .fs-4 {
+      letter-spacing: 0.1em;
     }
   }
   video {
@@ -41,81 +60,36 @@ body {
     height: 100%;
     object-fit: cover;
   }
-  h3 {
-    margin-top: 1vh;
-    font-size: 1.4em;
-    letter-spacing: 0.1em;
-    font-weight: 400;
-    color: #fff;
-  }
+
   button {
-    margin-top: 1vh;
-    background-color: #ec5200;
+    margin-top: 2vh;
+    background-color: #fff;
     font-size: 1.3em;
     letter-spacing: 0.1em;
-    color: #fff;
-    border: none;
-    border-radius: 0.5em;
-    padding: 0.75rem 1.5rem;
+    color: #000;
+    border-style: none;
+    border-radius: 0em;
+    padding: 0.75rem 1.8rem;
     cursor: pointer;
   }
   button:hover {
     background-color: #fff;
-    color: #000;
+    color: #ec5200;
   }
   button:active {
-    background-color: #fff;
-    color: #ec5200;
+    background-color: #ec5200;
+    color: #fff;
   }
 }
 
 // 選單
 header {
-  height: 8vh;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  overflow: hidden;
-  background-color: #ffffff;
   nav {
     ul {
-      display: flex;
-      width: 40vw;
-      list-style-type: none;
-      justify-content: space-around;
-      li {
-        a {
-          color: #000;
-          text-decoration: none;
-          line-height: 2em;
-          margin-left: 1em;
-          font-weight: 500;
-          font-size: 1.3em;
-        }
-        a:hover {
-          color: #a8a8a8;
-        }
-        a:active {
-          color: #fff;
-          background-color: #000;
-        }
-      }
-    }
-  }
-  .logo {
-    a {
-      margin-left: 0.5em;
-      font-weight: 900;
-      font-size: 4em;
-      color: #000;
-      line-height: 0.75em;
-      text-decoration: none;
+      width: 50vw;
     }
   }
   .contact {
-    display: flex;
-    flex-direction: row;
-    margin-right: 1.5em;
     img {
       height: 3vh;
       margin: 0 0.7em;
@@ -123,191 +97,45 @@ header {
   }
 }
 
-// 圖床
-.picbed {
-  margin-top: 8vh;
-  display: flex;
-  z-index: 1;
-  height: 100vh;
-  justify-content: flex-start;
-  overflow-x: hidden;
-  flex-direction: row;
-  flex-wrap: wrap;
-  .item {
-    max-height: 15vw;
-    overflow: hidden;
-    img {
-      max-height: 15vw;
-      object-fit: cover;
-      margin: 0px auto;
-      opacity: 0.75;
-      transition: all 0.5s;
+#navoverride {
+  .nav-item {
+    a:active {
+      color: #fff !important;
+      background-color: #000 !important;
     }
-    img:hover {
-      opacity: 1;
-      transform: scale(1.06);
-    }
+  }
+}
+
+// 縮圖
+.gallery {
+  .line1 {
+    margin-top: 2vh;
+  }
+  .illus {
+    border-radius: 0.2vw;
+    margin-top: 2vh;
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+    opacity: 0.5;
+    transition: all 0.5s;
+  }
+  .illus:hover {
+    opacity: 1;
+    transform: scale(1.06);
   }
 }
 
 // 自我介紹
 
-.info,
-.left {
-  overflow: hidden;
-  display: flex;
+.aboutpage {
+  min-height: 100vh;
 }
 
-.info {
-  background-color: #fff;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: flex-start;
+.about {
+  margin-top: 5vh;
 }
 
-.left {
-  margin-left: 7vw;
-  margin-top: 15vh;
-  justify-content: flex-start;
-  flex-direction: column;
-  flex-wrap: wrap;
-  font-weight: 400;
-  color: #000;
-  img {
-    width: 20vw;
-  }
-  .about {
-    width: 35vw;
-    margin-left: 3em;
-    h1 {
-      font-size: 3em;
-      line-height: 1em;
-    }
-    h3 {
-      font-size: 1.5rem;
-      line-height: 2em;
-    }
-    p {
-      font-size: 1.3rem;
-      margin: 1rem 0rem;
-    }
-    hr {
-      margin: 1rem 0rem;
-      display: none;
-    }
-  }
-}
-
-// RWD
-
-@media screen and (min-width: 840px) {
-  .info {
-    height: 100vh;
-  }
-}
-
-/* <1210px */
-@media screen and (max-width: 1210px) {
-  nav ul li a {
-    font-size: 1.4em;
-  }
-
-  /* 大標 */
-  .title {
-    font-size: 3.5em;
-  }
-
-  /* 選單列的email */
-  .contact {
-    font-size: 0.9em;
-  }
-}
-
-/* <1000px */
-@media screen and (max-width: 1000px) {
-  /* 大標 */
-  .title {
-    font-size: 3.4em;
-  }
-}
-
-/* <840px(平板) */
-@media screen and (max-width: 840px) {
-  /* 大標 */
-  .title {
-    font-size: 3em;
-  }
-
-  /* 右邊圖˙ */
-  .right {
-    width: 10vw;
-  }
-  /* 作品縮圖 */
-  .item {
-    width: 40vw;
-    height: 40vw;
-  }
-}
-
-/* <550px(手機) */
-@media screen and (max-width: 550px) {
-  .all,
-  nav {
-    flex-direction: column;
-    flex-wrap: wrap;
-  }
-
-  nav {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-  }
-
-  nav ul li a {
-    font-size: 1.2em;
-  }
-
-  /* 大標 */
-  .logo,
-  .logo img {
-    height: 20vh;
-  }
-
-  header {
-    max-height: 35%;
-  }
-
-  /* 並排改上下 */
-  .frontpage,
-  .content,
-  .info,
-  .picbed,
-  .left {
-    width: 100%;
-    min-height: 65%;
-  }
-
-  /* 作品縮圖 */
-  .item {
-    width: 50vw;
-    height: 50vw;
-  }
-
-  /* 自我介紹 */
-  .info {
-    flex-direction: column;
-    flex-wrap: wrap;
-  }
-
-  .left {
-    height: min-content;
-    margin-left: 1em;
-    padding-top: 2em;
-    overflow: hidden;
-    font-size: 1.1rem;
-  }
-
-  .right {
-    display: none;
-  }
-}
+@import "./scss/bootstrap.scss";
+@import "./scss/_variables.scss";
