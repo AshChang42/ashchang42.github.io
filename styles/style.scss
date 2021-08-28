@@ -11,13 +11,9 @@ body {
   height: 100vh;
   font-family: "Montserrat", "Noto Sans TC", sans-serif;
   padding-bottom: 70px;
+  cursor: none;
 }
-// about
-.aboutpage,
-.gallery {
-  min-height: 100%;
-  padding-bottom: 10vh;
-}
+
 // 作品內頁
 .abouttop {
   button {
@@ -39,7 +35,7 @@ body {
 .frontpage {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  min-height: 50vh;
   color: #000;
   .titles,
   button {
@@ -49,7 +45,7 @@ body {
     margin-top: 20vh;
     color: #fff;
     .fs-4 {
-      letter-spacing: 0.1em;
+      letter-spacing: 0.05em;
     }
   }
   video {
@@ -63,20 +59,24 @@ body {
 
   button {
     margin-top: 2vh;
-    background-color: #fff;
+    background: transparent;
     font-size: 1.3em;
     letter-spacing: 0.1em;
-    color: #000;
-    border-style: none;
-    border-radius: 0em;
+    height: 3em;
+    border-radius: 2em;
+    color: #fff;
     padding: 0.75rem 1.8rem;
     cursor: pointer;
+    border: 2px solid #fff;
   }
+
   button:hover {
+    border: none;
     background-color: #fff;
-    color: #ec5200;
+    color: #000;
   }
   button:active {
+    border: none;
     background-color: #ec5200;
     color: #fff;
   }
@@ -128,14 +128,61 @@ header {
 }
 
 // 自我介紹
-
-.aboutpage {
+.aboutpage,
+.gallery {
   min-height: 100vh;
+  z-index: -999;
+  padding-bottom: 10vh;
 }
 
 .about {
   margin-top: 5vh;
 }
 
+// 游標
+.cursor {
+  width: 3em;
+  height: 3em;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  transition: all 0.3s ease;
+  transition-property: background, transform;
+  transform-origin: 100% 100%;
+}
+
+.link-grow {
+  transform: scale(2);
+  background: #ec5200;
+  border: none;
+}
+
+svg {
+  fill: #fff;
+}
+
+// 換頁
+.transition-fade {
+  transition: 0.4s;
+  opacity: 1;
+}
+
+html.is-animating .transition-fade {
+  opacity: 1;
+}
+
+html.is-leaving .transition-fade {
+  opacity: 0;
+}
+
+// change navbar background on collapse
+
+@media (max-width: 992px) {
+  nav.navbar {
+    background: #000;
+  }
+}
 @import "./scss/bootstrap.scss";
 @import "./scss/_variables.scss";
