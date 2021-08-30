@@ -53,7 +53,7 @@ body {
 }
 
 .frontpage .titles .fs-4 {
-  letter-spacing: 0.05em;
+  letter-spacing: 0.02em;
 }
 
 .frontpage video {
@@ -91,6 +91,13 @@ body {
   color: #fff;
 }
 
+header nav {
+  background: rgba(0, 0, 0, 0.2);
+  z-index: 2;
+  -webkit-backdrop-filter: blur(7px) saturate(125%);
+          backdrop-filter: blur(7px) saturate(125%);
+}
+
 header nav ul {
   width: 50vw;
 }
@@ -103,6 +110,12 @@ header .contact img {
 #navoverride .nav-item a:active {
   color: #fff !important;
   background-color: #000 !important;
+}
+
+@media (max-width: 992px) {
+  nav.navbar {
+    background: #000;
+  }
 }
 
 .gallery .line1 {
@@ -182,10 +195,89 @@ html.is-leaving .transition-fade {
   opacity: 0;
 }
 
-@media (max-width: 992px) {
-  nav.navbar {
-    background: #000;
-  }
+.works .work .js-description {
+  display: none;
+}
+
+.works .js-dropdown {
+  background-clip: padding-box;
+  border: 0 solid transparent;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  float: left;
+  padding: 0;
+  margin: 2em 0 0 0;
+  width: 100%;
+  display: table;
+  border-color: transparent;
+  -o-border-image: none;
+     border-image: none;
+  border-style: solid;
+}
+
+.works .js-dropdown:before,
+.works .js-dropdown:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+.works .js-dropdown .js-dropdown-content {
+  background: none repeat scroll 0 0 #fff;
+  border: 3px solid #fff;
+  border-radius: 0.5em;
+  color: #000;
+  position: relative;
+  width: 100%;
+  padding: 1em;
+}
+
+.works .js-dropdown .js-dropdown-content .js-dropdown-arrow {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  margin-left: -55px;
+  border: 3em solid transparent;
+  border-bottom-color: #fff;
+  pointer-events: none;
+  -webkit-transition: left 0.3s;
+  transition: left 0.3s;
+}
+
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+.future {
+  background-image: url("../images/works/futureLab_BG.png");
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.dedicated {
+  background-image: url("../images/works/03-BG.png");
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.magister {
+  background-image: url("../images/works/Magister-BG.jpg");
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.smol {
+  min-height: 100%;
+  width: auto;
 }
 
 /*!
